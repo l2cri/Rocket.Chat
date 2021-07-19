@@ -104,6 +104,10 @@ settings.addGroup('Accounts', function() {
 	this.add('Accounts_SearchFields', 'username, name, bio, nickname', {
 		type: 'string',
 	});
+	this.add('Accounts_Directory_DefaultTab', 'users', {
+		type: 'string',
+		public: true,
+	});
 	this.add('Accounts_Directory_DefaultView', 'channels', {
 		type: 'select',
 		values: [

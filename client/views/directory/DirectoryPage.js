@@ -12,7 +12,7 @@ import UserTab from './UserTab';
 function DirectoryPage() {
 	const t = useTranslation();
 
-	const defaultTab = useSetting('Accounts_Directory_DefaultView');
+	const defaultTab = useSetting('Accounts_Directory_DefaultTab');
 	const federationEnabled = useSetting('FEDERATION_Enabled');
 	const [routeName] = useCurrentRoute();
 	const tab = useRouteParameter('tab');
@@ -34,11 +34,11 @@ function DirectoryPage() {
 		<Page>
 			<Page.Header title={t('Directory')} />
 			<Tabs flexShrink={0}>
-				<Tabs.Item selected={tab === 'channels'} onClick={handleTabClick('channels')}>
-					{t('Channels')}
-				</Tabs.Item>
 				<Tabs.Item selected={tab === 'users'} onClick={handleTabClick('users')}>
 					{t('Users')}
+				</Tabs.Item>
+				<Tabs.Item selected={tab === 'channels'} onClick={handleTabClick('channels')}>
+					{t('Channels')}
 				</Tabs.Item>
 				<Tabs.Item selected={tab === 'teams'} onClick={handleTabClick('teams')}>
 					{t('Teams')}
